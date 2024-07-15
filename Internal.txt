@@ -11,7 +11,17 @@ Raycast, FindFirstChild, GetRealPhysicsFPS, FindPartOnRayWithWhitelist.
 Logs from hooking the namecall methods: 
 
 Raycast: Origin: Value, Value, -Value | Direction: Value, -Value, Value
-FindPartOnRayWithWhitelist: Ray: {Value, -Value, -Value}, {0, 0, 0} | Whitelist: 1 Clips 2 Geometry | IgnoreWater: false
+FindPartOnRayWithWhitelist: Ray: {Value, -Value, -Value}, {0, 0, 0} | Whitelist: 1 Clips 2 Geometry | IgnoreWater: false | Ray.Origin: Value, -Value, -Value
+                                                                                                                                       Value, -Value, -Value
+                                                                                                                                       Value, -Value, -Value
+                                                                                                                                       Value, -Value, -Value
+                                                                                                                                       Value, -Value, -Value
+                                                                                                                                       Value, -Value, -Value
+                                                                                                                                       Value, -Value, -Value
+                                                                                                                                       Value, -Value, -Value
+                                                                                                                                       Value, -Value, -Value
+                                                                                                                                       (RenderStepped logs here,
+                                                                                                                                       If there are none, then it mass prints, until the next RenderStepped log.)
 
 Logs from RenderStepped:
 
