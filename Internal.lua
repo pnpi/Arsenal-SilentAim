@@ -13,7 +13,13 @@ ogNamecall = hookmetamethod(game, "__namecall", newcclosure(function(Self, ...)
             local Ray = Args[1]
             local Whitelist = Args[2]
             local IgnoreWater = Args[3] or false
-            print("FindPartOnRayWithWhitelist called with Ray:", Ray, "Whitelist:", Whitelist, "IgnoreWater:", IgnoreWater)
+            
+            print("FindPartOnRayWithWhitelist called with Ray:", Ray)
+            print("Whitelist: ")
+            for i, part in ipairs(Whitelist) do
+                print(i, part)
+            end
+            print("IgnoreWater:", IgnoreWater)
         end
     end
     
