@@ -12,3 +12,8 @@ Logs from hooking the namecall methods:
 
 Raycast: Origin: Value, Value, -Value | Direction: Value, -Value, Value
 FindPartOnRayWithWhitelist: Ray: {Value, -Value, -Value}, {0, 0, 0} | Whitelist: 1 Clips 2 Geometry | IgnoreWater: false
+
+Logs from RenderStepped:
+
+Target: Target Name
+Par: Part Name
