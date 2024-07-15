@@ -6,5 +6,5 @@ IsA, Emit, Fire, Clone, Invoke, AddTag, HasTag, Raycast, PivotTo, Destroy, GetSt
 
 Methods being called by workspace: 
 
-Raycast, FindFirstChild, GetRealPhysicsFPS
+Raycast, FindFirstChild, GetRealPhysicsFPS, FindPartOnRayWithWhitelist.
 
