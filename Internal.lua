@@ -4,8 +4,8 @@ local Part = nil
 local function GetNearestPlayer()
     local A, B = nil, math.huge
 
-    for _, v in (game.Players:GetPlayers()) do
-        if v ~= game.Players.LocalPlayer and v.Character then
+    for _, v in pairs(game.Players:GetPlayers()) do
+        if v ~= game.Players.LocalPlayer and v.Character and v.Character.PrimaryPart then
             local PrimaryPart = v.Character.PrimaryPart
             local PartPosition, InViewport = game.Workspace.CurrentCamera:WorldToScreenPoint(PrimaryPart.Position)
 
@@ -50,7 +50,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
     Targ = GetNearestPlayer()
     Part = GetNearestPart()
 
-    if Targ and  Part then 
+    if Targ and Part then 
         print("Target: " .. Targ.Name)
         print("Part: " .. tostring(Part))
     end
@@ -64,16 +64,27 @@ ogNamecall = hookmetamethod(game, "__namecall", newcclosure(function(Self, ...)
     if Self == game.Workspace and not checkcaller() then
         if Method == "Raycast" then
             local Origin = Args[1]
-            local Direction = Args[2]            
+            local Direction = Args[2]
+
+            if Part then 
+                Direction = (Part.Position - Origin).Unit * 1000              
+                Args[2] = Direction
+            end
+            return ogNamecall(Self, unpack(Args))
+            
         elseif Method == "FindPartOnRayWithWhitelist" then
-            local Ray = Args[1]
+            local NewRay = Args[1]
             local Whitelist = Args[2]
             local IgnoreWater = Args[3] or false
 
-            local Origin = Ray.Origin
-            print(Origin)
+            if Part then 
+                local Origin = NewRay.Origin
+                local Direction = (Part.Position - Origin).Unit * 1000
+                Args[1] = Ray.new(Origin, Direction)
+            end
+            return ogNamecall(Self, unpack(Args))
         end
     end
     
-    return ogNamecall(Self, ...)
+    return ogNamecall(Self, unpack(Args))
 end))
