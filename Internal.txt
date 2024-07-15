@@ -8,3 +8,7 @@ Methods being called by workspace:
 
 Raycast, FindFirstChild, GetRealPhysicsFPS, FindPartOnRayWithWhitelist.
 
+Logs from hooking the namecall methods: 
+
+Raycast: Origin: Value, Value, -Value | Direction: Value, -Value, Value
+FindPartOnRayWithWhitelist: Ray: {Value, -Value, -Value}, {0, 0, 0} Whitelist: table: dynamic value IgnoreWater: false
