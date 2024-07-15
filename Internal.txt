@@ -1,0 +1,10 @@
+# Documentation for Internal.lua
+
+Methods being called:
+
+IsA, Emit, Fire, Clone, Invoke, AddTag, HasTag, Raycast, PivotTo, Destroy, GetState, FindFirstChild, GetChildren, GetAttribute, SetAttribute, ScrrenPointToRay, WorldToScreenPoint, GetLargestCutoffDistance, FindPartOnRayWithWhitelist.
+
+Methods being called by workspace: 
+
+Raycast, FindFirstChild, GetRealPhysicsFPS
+
