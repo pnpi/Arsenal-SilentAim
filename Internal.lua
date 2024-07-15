@@ -51,8 +51,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
     Part = GetNearestPart()
 
     if Targ and  Part then 
-        print("Target: " .. Targ)
-        print("Part: " .. Part)
+        print("Target: " .. Targ.Name)
+        print("Part: " .. tostring(Part))
     end
 end)
 
