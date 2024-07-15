@@ -69,6 +69,9 @@ ogNamecall = hookmetamethod(game, "__namecall", newcclosure(function(Self, ...)
             local Ray = Args[1]
             local Whitelist = Args[2]
             local IgnoreWater = Args[3] or false
+
+            local Origin = Ray.Origin
+            print(Origin)
         end
     end
     
